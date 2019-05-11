@@ -1,5 +1,4 @@
 import React from "react"
-import Helmet from "react-helmet"
 
 import { graphql } from 'gatsby'
 
@@ -11,8 +10,9 @@ export default function Template({data}) {
 
 	return (
 		<Layout>
-    	<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    	<SEO title={post.frontmatter.title} keywords={post.frontmatter.keywords} />
 		<div>
+		<h1>{post.frontmatter.title}</h1>
 			<div dangerouslySetInnerHTML={{__html: post.html}} />
 		</div>
 		</Layout>
@@ -26,6 +26,9 @@ export const postQuery = graphql`
 			frontmatter{
 				title
 				path
+				color
+				date
+				keywords
 			}
 		}
 	}

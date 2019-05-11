@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -19,15 +20,29 @@ const IndexPage = ({data}) => (
     </div>
     <Link to="/page-2/">Go to page 2</Link>
     {data.allMarkdownRemark.edges.map(post => (
+        
        <Link key={post.node.id}
-       to={post.node.frontmatter.path}>{post.node.frontmatter.title}</Link>
+       to={post.node.frontmatter.path} class="hello">
+          <div class="blog preview">
+      <h1>{post.node.frontmatter.title}</h1>
+          
+
+          </div>
+       </Link>
+       
+
       ))}
   </Layout>
 )
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(limit: 10) {
+    allMarkdownRemark(
+      limit: 10
+      sort: { fields: [frontmatter___date], order: DESC}
+      filter: { frontmatter: { published: {eq: true}}}
+
+    ) {
       edges {
         node {
           id
