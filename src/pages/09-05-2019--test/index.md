@@ -3,6 +3,7 @@ path: '/test'
 title: 'just a test'
 published: true
 date: '2017-05-10'
+keywords: ["checkboxes"]
 
 ---
 
@@ -22,6 +23,19 @@ Cyllenenque solet.
 > Atque cretus annis committere, exul haesisse pennae **clipei** dignus tamen
 > dederam, magnum turea iuravimus velox!
 
+```scss
+input[type=checkbox]{
+	color: red;
+	position: relative
+}
+```
+
+
+```scss
+.my-class{
+	position: relative
+}
+```
 Strictis et Acrisio silvae. Et neque casside, repagula, *flumina*, erat satus
 Petraei modo nimios?
 
