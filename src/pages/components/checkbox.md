@@ -1,22 +1,41 @@
 ---
-path: '/css-checkboxes'
-title: 'Custom Checkboxes (and Radios) With CSS'
-color: 'red'
+path: '/component/checkbox'
+title: 'Checkbox'
+color: 'green'
 published: true
-date: '2019-05-11'
-keywords: ["checkboxes"]
+date: '2019-05-16'
+keywords: ["anotherone"]
+type: ["component"]
 ---
 
-```scss
-input[type=checkbox]{
-	color: red;
-	position: relative
-}
+## Demo
+
+<div class="test-field">
+	<label class="c-checkbox__label">
+		<input type="checkbox" class="c-checkbox">
+		<span class="c-checkbox__visual"></span>
+		<span class="c-checkbox__value">This is a checkbox</span>
+	</label>
+</div>
+
+## HTML
+
+```html
+<label class="c-checkbox__label">
+	<input type="checkbox" class="c-checkbox">
+	<span class="c-checkbox__visual"></span>
+	<span class="c-checkbox__value">This is a checkbox</span>
+</label>
 ```
 
-
+## Sass Variables
 ```scss
-.my-class{
-	position: relative
-}
+$c-checkbox--border-color: $s-color--border !default;
+$c-checkbox--active-fill: $s-color--header !default;
 ```
+
+* `scss›$c-checkbox--border-color` sets the border color
+* `scss›$c-checkbox--active-fill` sets the fill color when checked
+
+
+component varaibles default from colors set in <a href="/settings/color">settings/color.scss</a> 

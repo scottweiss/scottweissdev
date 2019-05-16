@@ -2,9 +2,9 @@
 path: '/first-post'
 title: 'first blog post'
 color: 'green'
-published: true
+published: false
 date: '2017-05-08'
-keywords: []
+keywords: ["anotherone"]
 ---
 
 # hello!

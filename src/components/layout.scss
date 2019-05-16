@@ -83,8 +83,24 @@ h1,h2,h3,h4,h5,h6{
 // @import 'calc-interpolation.scss';
 
 // @import 'fluid-type.scss';
+
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @import 'prism-tomorrow.css';
 @import 'type.scss';
+
+$c-checkbox--border-color: red;
+$c-checkbox--active-fill: red;
+@import './styles/checkbox.scss';
 :root {
   // --baseline: 1.4;
   // /* Line-height fallback */
@@ -113,7 +129,53 @@ html {
   // font-size: 20px;
 }
 
+.test-field{
+  background-image: linear-gradient(45deg, #808080 25%, transparent 25%), linear-gradient(-45deg, #808080 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #808080 75%), linear-gradient(-45deg, transparent 75%, #808080 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  padding:  calc(var(--baseline)/2) var(--baseline) ;
+  border-radius: 2px;
+  box-shadow: inset 0 0 4px 3px rgba(0,0,0,.2);
+  margin-bottom: calc(var(--baseline) * 2);
+}
 
+$spacer: var(--baseline) !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: #{$spacer} ,
+    2: calc(#{$spacer} * 2),
+    3: calc(#{$spacer} * 3),
+    4: calc(#{$spacer} * 4),
+    5: calc(#{$spacer} * 5),
+    // gutter: $grid-gutter-width
+  ),
+  $spacers
+);
+
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $length in $spacers {
+        .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+        .#{$abbrev}t-#{$size},
+        .#{$abbrev}y-#{$size} {
+          #{$prop}-top: $length !important;
+        }
+        .#{$abbrev}r-#{$size},
+        .#{$abbrev}x-#{$size} {
+          #{$prop}-right: $length !important;
+        }
+        .#{$abbrev}b-#{$size},
+        .#{$abbrev}y-#{$size} {
+          #{$prop}-bottom: $length !important;
+        }
+        .#{$abbrev}l-#{$size},
+        .#{$abbrev}x-#{$size} {
+          #{$prop}-left: $length !important;
+        }
+      }
+    }
 
 // // Change scale
 
