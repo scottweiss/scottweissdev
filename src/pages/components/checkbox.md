@@ -18,6 +18,12 @@ type: ["component"]
 	</label>
 </div>
 
+<label class="c-checkbox__label">
+		<input type="checkbox" class="c-checkbox">
+		<span class="c-checkbox__visual"></span>
+		<span class="c-checkbox__value">This is a checkbox</span>
+	</label>
+
 ## HTML
 
 ```html

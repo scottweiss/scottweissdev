@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 // import Image from "../components/image"
+// import Accordion from "../components/accordion"
 import SEO from "../components/seo"
 
 const IndexPage = ({data}) => (
@@ -14,20 +15,15 @@ const IndexPage = ({data}) => (
     <ul>
     {data.allMarkdownRemark.edges.map(post => (
         <li key={post.node.id}>
-       <Link 
-       to={post.node.frontmatter.path} className="hello">
-          <div className="blog preview">
-      {post.node.frontmatter.title}
-          
-
-          </div>
-       </Link>
-       
+         <Link 
+         to={post.node.frontmatter.path} className="hello">
+            <div className="blog preview">{post.node.frontmatter.title}</div>
+          </Link>
         </li>
       ))}
     </ul>
 
-    
+
   </Layout>
 )
 
