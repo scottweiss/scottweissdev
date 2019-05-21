@@ -100,7 +100,8 @@ module.exports = {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
         // Fields to index
-        fields: [`title`, `tags`, `content`, 'rawMarkdownBody'],
+        // fields: [`title`, `tags`, 'keywords', 'searchterms'],
+        fields: [`title`, `tags`],
         // How to resolve each field`s value for a supported node type
         resolvers: {
           // For any node of type MarkdownRemark, list how to resolve the fields` values
@@ -108,7 +109,8 @@ module.exports = {
             title: node => node.frontmatter.title,
             tags: node => node.frontmatter.tags,
             path: node => node.frontmatter.path,
-            content: node => node.rawMarkdownBody
+            // keywords: node => node.frontmatter.keywords,
+            // searchterms: node => node.frontmatter.searchterms,
           },
         },
       },

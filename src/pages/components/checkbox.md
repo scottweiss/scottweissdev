@@ -1,11 +1,11 @@
 ---
 path: '/component/checkbox'
 title: 'Checkbox'
-color: 'green'
 published: true
 date: '2019-05-16'
 keywords: ["anotherone"]
 tags: ["component"]
+searchterms: ["c-checkbox"]
 ---
 
 ## Demo

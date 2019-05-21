@@ -1,11 +1,11 @@
 ---
 path: '/component/button'
 title: 'Button'
-color: 'green'
 published: true
 date: '2019-05-16'
-keywords: ["anotherone"]
-tags: ["component", "button"]
+keywords: ["anotherone", "button"]
+tags: ["component"]
+searchterms: ["c-button", ".c-"]
 ---
 
 ## Demo
