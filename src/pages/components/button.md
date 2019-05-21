@@ -5,7 +5,7 @@ color: 'green'
 published: true
 date: '2019-05-16'
 keywords: ["anotherone"]
-type: ["component", "button"]
+tags: ["component", "button"]
 ---
 
 ## Demo

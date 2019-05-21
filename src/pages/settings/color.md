@@ -5,7 +5,7 @@ title: 'Color'
 published: true
 date: '2019-05-16'
 keywords: ["color"]
-type: ["setting"]
+tags: ["setting"]
 ---
 ```scss
 $s-color--primary: #f2516b !default;

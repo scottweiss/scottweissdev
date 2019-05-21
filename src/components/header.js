@@ -1,15 +1,14 @@
-import { Link } from "gatsby"
+import { StaticQuery, Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { graphql } from "gatsby"
+
+import Search from "./search"
 
 const Header = ({ siteTitle }) => (
-  <header
-  
-  >
-    <div
-      
-    >
-      <h1 >
+  <header>
+    <div>
+    <h1 >
         <Link
           to="/"
           
@@ -17,6 +16,23 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+    <div>  <StaticQuery
+    query={graphql`
+      query SearchIndexQuery {
+        siteSearchIndex {
+          index
+        }
+        
+
+      }
+    `}
+    render={data => (
+  
+        <Search searchIndex={data.siteSearchIndex.index} />
+   
+    )}
+  /></div>
+      
     </div>
   </header>
 )
