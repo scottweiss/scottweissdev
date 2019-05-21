@@ -26,7 +26,6 @@ export const postQuery = graphql`
 			frontmatter{
 				title
 				path
-				color
 				date
 				keywords
 			}
