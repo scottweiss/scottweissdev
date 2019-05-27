@@ -97,10 +97,7 @@ h1,h2,h3,h4,h5,h6{
 
 @import 'prism-tomorrow.css';
 @import 'type.scss';
-
-$c-checkbox--border-color: red;
-$c-checkbox--active-fill: red;
-@import './styles/checkbox.scss';
+@import 'styles/patterns/hero';
 :root {
   // --baseline: 1.4;
   // /* Line-height fallback */

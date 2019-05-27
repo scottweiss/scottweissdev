@@ -1,11 +1,11 @@
 ---
-path: '/pattern/entity-header'
-title: 'entity-header'
-
+title: 'Lessons learned'
+path: '/check-this-out'
+date: '2019-05-27'
 published: true
-date: '2019-05-16'
-keywords: [""]
-tags: ["pattern", "entity header", "header"]
+keywords: []
+tags: []
+searchterms: []
 ---
 
 ## placeholder

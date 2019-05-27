@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Tembo Style Documentation`,
-    description: `Placeholder description`,
+    title: `Scott Weiss`,
+    description: `a blog and thoughts from a front end developer`,
     author: `@scottweiss`,
   },
   plugins: [

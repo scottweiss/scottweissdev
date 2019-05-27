@@ -1,63 +1,28 @@
 import React from "react"
-import { Link } from "gatsby"
-import { graphql } from 'gatsby'
+
+import { graphql, Link, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 // import Image from "../components/image"
 // import Accordion from "../components/accordion"
+import NewestPost from "../components/newestpost.js"
+import SecondaryPosts from "../components/secondarypost.js"
+
 import SEO from "../components/seo"
 
-const IndexPage = ({data}) => (
+const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <div class="p-hero">
+      <h1>Hello World</h1>
 
+    </div>
+    <NewestPost /> 
 
-    <ul>
-    {data.allMarkdownRemark.edges.map(post => (
-        <li key={post.node.id}>
-         <Link 
-         to={post.node.frontmatter.path} className="hello">
-            <div className="blog preview">{post.node.frontmatter.title}</div>
-          </Link>
-        </li>
-      ))}
-    </ul>
-
-
+    <SecondaryPosts /> 
   </Layout>
 )
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(
-      limit: 10
-      sort: { fields: [frontmatter___date], order: DESC}
-      filter: { frontmatter: { published: {eq: true}}}
-
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            path
-          }
-        }
-      }
-    }
-  }
-`
-
-// export const typeQuery = graphql`
-//   query TypeQuery {
-//    allMarkdownRemark(limit: 2000) {
-//       group(field: frontmatter___type) {
-//         fieldValue
-//         totalCount
-//       }
-//     }
-//   }
-// `
 
 export default IndexPage
 
