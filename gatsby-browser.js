@@ -8,3 +8,4 @@
 // require("prismjs/themes/prism-tomorrow.css")
 
 require( "./src/components/layout.scss")
+require("@fortawesome/fontawesome-free/css/all.min.css")

@@ -29,6 +29,7 @@
     "typescript": "^3.4.5"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2",
     "gh-pages": "^2.0.1",
     "prettier": "^1.17.0"
   },

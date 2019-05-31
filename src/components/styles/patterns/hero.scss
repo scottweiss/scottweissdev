@@ -1,11 +1,17 @@
 .p-hero{
 	background:$blue-1 ;
 	color: $yellow-1;
+	
 	// height: calc(100vh - (5 * var(--baseline)));
 	margin:  var(--gap) calc(-1 * var(--gap));
 	// padding:  var(--gap);
 	display: grid;
-	 grid-template-columns: repeat(9, 1fr);
+	 grid-template-columns: 1fr repeat(6, 1fr) 1fr;
   grid-template-rows: repeat(8, auto);
+   grid-template-areas: "head head head head head head head head"
+
+                       ". about about about about about about . "
+                       ". post1 post1 post1 post2 post2 post2 . "
+                       ". post3 post3 post4 post4 post5 post5 . ";
 
 }
