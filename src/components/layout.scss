@@ -98,6 +98,7 @@ h1,h2,h3,h4,h5,h6{
 @import 'prism-tomorrow.css';
 @import 'type.scss';
 @import 'styles/patterns/hero';
+@import 'styles/patterns/recent-post';
 :root {
   // --baseline: 1.4;
   // /* Line-height fallback */
@@ -174,6 +175,10 @@ $spacers: map-merge(
       }
     }
 
+
+h1{
+  // font-size: var(--h1-font-size);
+}
 // // Change scale
 
 // $s-font-size__scale-mod_1: 1.067 !default;

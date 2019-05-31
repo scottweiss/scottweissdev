@@ -1,8 +1,11 @@
 .p-hero{
 	background:$blue-1 ;
 	color: $yellow-1;
-	height: 300px;
+	// height: calc(100vh - (5 * var(--baseline)));
 	margin:  var(--gap) calc(-1 * var(--gap));
-	padding:  var(--gap);
+	// padding:  var(--gap);
 	display: grid;
+	 grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(8, auto);
+
 }

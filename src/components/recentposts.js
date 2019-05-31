@@ -1,12 +1,12 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 
-const NewestPost = () => (
+const RecentPosts = () => (
   <StaticQuery
     query={graphql`
       query {
         allMarkdownRemark(
-          limit: 1
+          limit: 5
           sort: { fields: [frontmatter___date], order: DESC}
           filter: { frontmatter: { published: {eq: true}}}
         ) {
@@ -19,24 +19,26 @@ const NewestPost = () => (
                 date(formatString: "MMMM Do, YYYY")
               }
               excerpt
+              timeToRead
             }
           }
         }
       }
     `}
     render={data => (
-            <div>
+            <article class="recent-posts">
                 {data.allMarkdownRemark.edges.map(({ node }) => (
-                    <div key={node.id}>   
-                      <Link to={node.frontmatter.path} >
-                          {node.frontmatter.title}
-                          <span class="ml-1">{node.frontmatter.date}</span>
-                      </Link>
-                    </div>
+              
+                      <Link key={node.id} to={node.frontmatter.path} class="recent-post">
+                      <header><h1 class="recent-post__title">{node.frontmatter.title}</h1></header>
+                      <p class="recent-post__reading-time">{node.timeToRead}</p>
+                        <p class="recent-post__date-published">{node.frontmatter.date}</p>
+                       </Link>                           
+                    
                 ))}
-            </div>
+            </article>
         )}
     />
 )
 
-export default NewestPost
+export default RecentPosts
